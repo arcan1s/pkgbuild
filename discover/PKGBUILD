@@ -1,0 +1,41 @@
+# Maintainer: Evgeniy "arcanis" Alekseev <esalexeev@gmail.com>
+
+pkgname=discover
+pkgver=1554
+pkgrel=1
+pkgdesc="Contains a library and front-end program for retrieving information about a system's hardware."
+arch=('i686' 'x86_64')
+url="http://componentizedlinux.org/discover/"
+license=('GPL')
+depends=('curl' 'expat' 'check')
+makedepends=('cmake' 'subversion')
+
+_svntrunk="svn://anonscm.debian.org/svn/pkg-${pkgname}/${pkgname}/trunk/"
+_svnmod=discover
+
+build()
+{
+  msg "Connecting to SVN server..."
+  if [ -d "${_svnmod}/.svn" ]; then
+    (cd ${_svnmod} && svn up -r ${pkgver})
+  else
+    svn co ${_svntrunk} --config-dir ./ -r ${pkgver} ${_svnmod}
+  fi
+  msg "SVN checkout done or server timeout"
+  msg "Starting build..."
+  
+  cd ${srcdir}/${pkgname}
+  ./buildtools/setup
+  ./configure --prefix=/usr --enable-static=no
+  # remove building docs
+  sed -i "s|buildtools doctools portability etc doc scripts|\
+buildtools doctools portability etc scripts|g" Makefile
+  make
+}
+
+package()
+{
+  msg "done"
+  cd ${srcdir}/${pkgname}
+  make DESTDIR=${pkgdir} install
+}

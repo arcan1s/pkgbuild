@@ -1,0 +1,55 @@
+# Maintainer: Evgeniy "arcanis" Alekseev <esalexeev@gmail.com>
+
+pkgname=quantum-espresso-gpu-svn
+pkgver=216
+pkgrel=1
+pkgdesc="Quantum ESPRESSO is an integrated suite of computer codes for electronic-structure calculations and materials modeling at the nanoscale. Version with GPU acceleration"
+arch=('any')
+url="http://qe-forge.org/gf/project/q-e-gpu/"
+license=('GPLv2')
+makedepends=('gcc-fortran' 'blas' 'lapack' 'fftw' 'cuda')
+depends=('quantum-espresso')
+source=(http://qe-forge.org/gf/download/frsrelease/142/452/QE-5.0.2_GPU-r${pkgver}.patch)
+md5sums=('fc74bc210db6c2d88fd8a5f444aab447')
+
+_qetrunk="http://qeforge.qe-forge.org/svn/q-e/trunk/espresso"
+_qemod=espresso
+_qerev=10452
+_svntrunk="http://qeforge.qe-forge.org/svn/q-e-gpu/trunk/GPU"
+_svnmod=GPU
+
+build()
+{
+  msg "Connecting to QE SVN server..."
+  if [ -d "${_qetrunk}/.svn" ]; then
+    (cd ${_qemod} && svn up -r ${_qerev})
+  else
+    svn co ${_qetrunk} -r ${_qerev} ${_qemod} --username=anonymous --password=""
+  fi
+  
+  msg "Connecting to QE-GPU SVN server..."
+  if [ -d "${srcdir}/${_qemod}/${_svnmod}/.svn" ]; then
+    (cd ${srcdir}/${_qemod}/${_svnmod} && svn up -r ${pkgver})
+  else
+    svn co ${_svntrunk} -r ${pkgver} ${srcdir}/${_qemod}/${_svnmod} --username=anonymous --password=""
+  fi
+  
+  # build qe
+   cd ${srcdir}/${_qemod}/
+   ./configure
+   make all
+  
+  # build qe-gpu
+  cd ${srcdir}/${_qemod}/${_svnmod}/
+  ./configure --enable-cuda --with-gpu-arch=35 --with-cuda-dir=/opt/cuda \
+              --enable-magma --enable-parallel
+  cd ${srcdir}/${_qemod}/
+  sed -i "s/python/python2/g" Makefile.gpu
+  make -f Makefile.gpu all-gpu
+}
+
+package()
+{
+  msg "done"
+}
+
