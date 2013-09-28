@@ -3,7 +3,7 @@
 
 pkgname=qmmp-qsmmp-git
 _gitname=qsmmp
-pkgver=qmmp.0.5.34.gcd1ca1a
+pkgver=0.5.34.gcd1ca1a
 pkgrel=1
 pkgdesc="Amarok-like interface for qmmp. Git version"
 arch=('i686' 'x86_64')
