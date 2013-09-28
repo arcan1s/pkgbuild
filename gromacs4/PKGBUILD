@@ -20,15 +20,15 @@ md5sums=('6a87e7cdfb25d81afa9fea073eb28468')
 
 build() {
   mkdir -p ${srcdir}/double
-  mkdir -p ${pkgdir}/etc/profile.d/
-  mkdir -p ${pkgdir}/usr/share/bash-completion/completions
   msg2 "Building the doulbe precision files"
   cd ${srcdir}/double	
   cmake -DCMAKE_PREFIX=/opt/gromacs_old/ -DCMAKE_INSTALL_PREFIX=/opt/gromacs_old/ -DGMX_THREADS=ON -DGMX_SHARED_LIBS=ON -DGMX_DOUBLE=ON -DGMX_X11=ON -DGMX_DEFAULT_SUFFIX=OFF -DGMX_LIBS_SUFFIX=_4.5 -DGMX_BINARY_SUFFIX=_4.5 ../${_pkgname}-${pkgver}/
-  make -j3
+  make -j5
 }
 
 package() {
+  mkdir -p ${pkgdir}/etc/profile.d/
+  mkdir -p ${pkgdir}/usr/share/bash-completion/completions
   # Cleaning up, kept the csh completion at default location
   msg2 "Making the double precision executables"
   cd ${srcdir}/double
