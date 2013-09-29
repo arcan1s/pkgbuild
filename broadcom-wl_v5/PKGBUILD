@@ -29,24 +29,24 @@ _extramodules="extramodules-${_kernmajor}-ARCH"
 _kernver="$(cat /usr/lib/modules/${_extramodules}/version)"
 
 prepare(){
-  cd broadcom-sta-${pkgver}/${_arch}
+  cd "broadcom-sta-${pkgver}/${_arch}"
 
   patch -Np1 -i "${srcdir}/distro.patch"
   patch -Np1 -i "${srcdir}/fixes.patch"
 }
 
 build() {
-    cd broadcom-sta-${pkgver}/${_arch}
+    cd "broadcom-sta-${pkgver}/${_arch}"
 
-    make -C /usr/lib/modules/${_kernver}/build M=`pwd`
+    make -C "/usr/lib/modules/${_kernver}/build" M=`pwd`
 }
 
 package() {
-    cd broadcom-sta-${pkgver}/${_arch}
+    cd "broadcom-sta-${pkgver}/${_arch}"
 
     install -D -m 644 wl.ko "${pkgdir}/usr/lib/modules/${_extramodules}/wl.ko"
     gzip "${pkgdir}/usr/lib/modules/${_extramodules}/wl.ko"
 
-    install -D -m 644 lib/LICENSE.txt "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-    install -D -m 644 ${srcdir}/modprobe.d "${pkgdir}/etc/modprobe.d/broadcom-wl.conf"
+    install -D -m 644 "lib/LICENSE.txt" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+    install -D -m 644 "${srcdir}/modprobe.d" "${pkgdir}/etc/modprobe.d/broadcom-wl.conf"
 }
