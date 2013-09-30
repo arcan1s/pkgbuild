@@ -1,41 +1,41 @@
 # Maintainer: Evgeniy "arcanis" Alekseev <esalexeev@gmail.com>
 
 pkgname=discover
-pkgver=1554
+pkgver=2.1.2
+_dataver=2.2013.01.11
 pkgrel=1
-pkgdesc="Contains a library and front-end program for retrieving information about a system's hardware."
+pkgdesc="Contains a library and front-end program for retrieving information about a system's hardware"
 arch=('i686' 'x86_64')
-url="http://componentizedlinux.org/discover/"
+url="http://svn.debian.org/wsvn/pkg-discover/"
 license=('GPL')
 depends=('curl' 'expat' 'check')
-makedepends=('cmake' 'subversion')
-
-_svntrunk="svn://anonscm.debian.org/svn/pkg-${pkgname}/${pkgname}/trunk/"
-_svnmod=discover
+source=(http://ftp.de.debian.org/debian/pool/main/d/${pkgname}/${pkgname}_${pkgver}.orig.tar.gz
+        http://ftp.de.debian.org/debian/pool/main/d/${pkgname}-data/${pkgname}-data_${_dataver}.tar.gz)
+md5sums=('af78b63cc8db31b11d7e25958423611e'
+         'dff223c271f3e9c52e7ba065c96c92ff')
 
 build()
 {
-  msg "Connecting to SVN server..."
-  if [ -d "${_svnmod}/.svn" ]; then
-    (cd ${_svnmod} && svn up -r ${pkgver})
-  else
-    svn co ${_svntrunk} --config-dir ./ -r ${pkgver} ${_svnmod}
+  if [[ -d ${srcdir}/build ]]; then
+    rm -rf "${srcdir}/build"
   fi
-  msg "SVN checkout done or server timeout"
-  msg "Starting build..."
-  
-  cd ${srcdir}/${pkgname}
-  ./buildtools/setup
-  ./configure --prefix=/usr --enable-static=no
-  # remove building docs
-  sed -i "s|buildtools doctools portability etc doc scripts|\
-buildtools doctools portability etc scripts|g" Makefile
+  mkdir "${srcdir}/build"; cd "${srcdir}/build"
+  ../${pkgname}-${pkgver}/configure --prefix="/usr" \
+                                    --datadir="/usr/share" \
+                                    --sysconfdir="/etc" \
+                                    LIBS=-lcheck
   make
 }
 
 package()
 {
-  msg "done"
-  cd ${srcdir}/${pkgname}
-  make DESTDIR=${pkgdir} install
+  cd "${srcdir}/build"
+  make DESTDIR="${pkgdir}" install
+  # remove docs and sbin dir
+  rm -rf "${pkgdir}/usr/share/doc"
+  rm -rf "${pkgdir}/usr/sbin"
+  
+  # build data
+  cd "${srcdir}/${pkgname}-data-${_dataver}"
+  make prefix="/usr" DESTDIR="${pkgdir}" install
 }
