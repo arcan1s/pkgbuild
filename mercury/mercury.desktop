@@ -1,0 +1,10 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=Mercury
+Comment=Software for structure visualization and the exploration of crystal packing
+Exec=mercury
+Icon=mercury
+Terminal=false
+Encoding=UTF-8
+Type=Application
+Categories=Qt;Science;Chemistry;Physics;Education;
