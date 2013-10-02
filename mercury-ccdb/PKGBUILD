@@ -1,6 +1,7 @@
 # Maintainer: Evgeniy "arcanis" Alekseev <esalexeev@gmail.com>
 
-pkgname=mercury
+pkgname=mercury-ccdb
+_pkgname=mercury
 pkgver=3.1.1
 pkgrel=1
 pkgdesc="Software for 3D structure visualization, the exploration of crystal packing and the statistical analysis of CSD search data"
@@ -26,8 +27,8 @@ package()
   "${srcdir}/csdsystempatch-5.34.2-linux-installer.run" --prefix "${pkgdir}/opt/mercury" --mode unattended
   
   install -D -m644 "${pkgdir}/opt/mercury/docs/MercuryLicence.txt" \
-                   "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-  install -D -m644 "${srcdir}/mercury.sh" "${pkgdir}/etc/profile.d/mercury.sh"
+                   "${pkgdir}/usr/share/licenses/${_pkgname}/LICENSE"
+  install -D -m755 "${srcdir}/mercury.sh" "${pkgdir}/etc/profile.d/mercury.sh"
   install -D -m644 "${srcdir}/mercury.desktop" "${pkgdir}/usr/share/applications/mercury.desktop"
   install -D -m644 "${pkgdir}/opt/mercury/icons/mercury_32x32.png" \
                    "${pkgdir}/usr/share/icons/hicolor/32x32/apps/mercury.png"
