@@ -1,6 +1,6 @@
 # Maintainer: Evgeniy "arcanis" Alekseev <esalexeev@gmail.com>
 
-pkgname=mercury-ccdb
+pkgname=mercury-ccdc
 _pkgname=mercury
 pkgver=3.1.1
 pkgrel=1
