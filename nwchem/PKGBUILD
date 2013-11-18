@@ -1,0 +1,27 @@
+# Maintainer: Evgeniy "arcanis" Alexeev <esalexeev@gmail.com>
+
+pkgname=nwchem
+pkgver=6.3.r2
+_longver=6.3.revision2
+_date=2013-10-17
+pkgrel=1
+pkgdesc="Delivering high-performance computational chemistry"
+arch=('i686' 'x86_64')
+url="http://www.nwchem-sw.org/"
+license=('GPL')
+depends=()
+makedepends=()
+source=(http://www.nwchem-sw.org/images/Nwchem-${_longver}-src.${_date}.tar.gz)
+md5sums=('f961c1e5ee46fbc8718cf7b1b59bafa9')
+
+
+build ()
+{
+  cd nwchem-${_longver}-src.${_date}
+  
+}
+
+package()
+{
+  msg "done"
+}

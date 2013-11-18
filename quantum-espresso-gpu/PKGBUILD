@@ -2,53 +2,42 @@
 
 pkgname=quantum-espresso-gpu-svn
 pkgver=216
+_qever=5.0.2
 pkgrel=1
 pkgdesc="Quantum ESPRESSO is an integrated suite of computer codes for electronic-structure calculations and materials modeling at the nanoscale. Version with GPU acceleration"
-arch=('any')
+arch=('i686' 'x86_64')
 url="http://qe-forge.org/gf/project/q-e-gpu/"
 license=('GPLv2')
 makedepends=('gcc-fortran' 'blas' 'lapack' 'fftw' 'cuda')
 depends=('quantum-espresso')
+
+# because needed authorization
 svn import --username=anonymous --password=""
-source=(espresso::svn+http://qeforge.qe-forge.org/svn/q-e/trunk/espresso
-        espresso/GPU::svn+http://qeforge.qe-forge.org/svn/q-e-gpu/trunk/GPU
-        http://qe-forge.org/gf/download/frsrelease/142/452/QE-5.0.2_GPU-r${pkgver}.patch)
-md5sums=('SKIP'
-         'SKIP'
+source=(http://qe-forge.org/gf/download/frsrelease/116/403/espresso-${_qever}.tar.gz
+        http://qe-forge.org/gf/download/frsrelease/135/453/QE-GPU-r${pkgver}.tar.gz
+        http://qe-forge.org/gf/download/frsrelease/142/452/QE-${_qever}_GPU-r${pkgver}.patch)
+md5sums=('d8b0d7ac3ddbfe0a656ec1501a2a4688'
+         '8fdff7841ed54c6ff1a5f501d2b0ca8f'
          'fc74bc210db6c2d88fd8a5f444aab447')
 
-_qetrunk="http://qeforge.qe-forge.org/svn/q-e/trunk/espresso"
-_qemod=espresso
-_qerev=10452
-_svntrunk="http://qeforge.qe-forge.org/svn/q-e-gpu/trunk/GPU"
-_svnmod=GPU
+prepare()
+{
+  cp -rf "GPU" "espresso-${_qever}/GPU"
+}
 
 build()
 {
-#   msg "Connecting to QE SVN server..."
-#   if [ -d "${_qetrunk}/.svn" ]; then
-#     (cd ${_qemod} && svn up -r ${_qerev})
-#   else
-#     svn co ${_qetrunk} -r ${_qerev} ${_qemod} --username=anonymous --password=""
-#   fi
-#   
-#   msg "Connecting to QE-GPU SVN server..."
-#   if [ -d "${srcdir}/${_qemod}/${_svnmod}/.svn" ]; then
-#     (cd ${srcdir}/${_qemod}/${_svnmod} && svn up -r ${pkgver})
-#   else
-#     svn co ${_svntrunk} -r ${pkgver} ${srcdir}/${_qemod}/${_svnmod} --username=anonymous --password=""
-#   fi
-  
   # build qe
-   cd ${srcdir}/${_qemod}/
-   ./configure
-   make all
+  cd "espresso-${_qever}"
+  ./configure
+  make all
   
+  patch -p1 -i "${srcdir}/QE-${_qever}_GPU-r${pkgver}.patch"
   # build qe-gpu
-  cd ${srcdir}/${_qemod}/${_svnmod}/
-  ./configure --enable-cuda --with-gpu-arch=35 --with-cuda-dir=/opt/cuda \
-              --enable-magma --enable-parallel
-  cd ${srcdir}/${_qemod}/
+  cd "GPU"
+  ./configure --enable-parallel --enable-openmp --enable-cuda --with-gpu-arch=35 \
+              --with-cuda-dir=/opt/cuda --with-phigemm --with-magma
+  cd ..
   sed -i "s/python/python2/g" Makefile.gpu
   make -f Makefile.gpu all-gpu
 }
