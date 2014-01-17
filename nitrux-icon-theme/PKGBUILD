@@ -13,7 +13,7 @@ source=("http://store.nitrux.in/files/NITRUX.tar.gz")
 depends=('librsvg')
 makedepends=()
 options=(!strip)
-md5sums=('127a8b0e5e21d4e0bf4a99369b023ae3')
+md5sums=('1f64993209476e14703417b39ddaf1b8')
 
 package() {
   cd "${srcdir}"
