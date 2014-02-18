@@ -1,0 +1,33 @@
+# Maintainer: Evgeniy "arcanis" Alexeev <arcanis.arch at gmail dot com>
+
+pkgname=kdm-theme-modernarchlinux
+_pkgname=modernarchlinux
+pkgver=1.0
+pkgrel=1
+pkgdesc="Simple and minimalist theme for KDM with Archlinux logo"
+arch=('any')
+url="http://kde-look.org/content/show.php?action=content&content=163475"
+license=('GPL')
+depends=('kdebase-workspace')
+source=("http://kde-look.org/CONTENT/content-files/163475-KDM-Theme-archlinux.tar.gz"
+        "http://kde-look.org/CONTENT/content-files/163449-Modern-KDE-Splash.tar.gz")
+md5sums=('ba7b184795cc33b24dc472a5bdd6fa35'
+         '2e1d235ce1cf701490f79548dc2fa954')
+
+prepare() {
+  # change rocks to default background
+  sed -i "s/rocks.png/background.jpeg/g" "${srcdir}/Modern-KDE-Splash/main.qml"
+}
+
+package() {
+  # install kdm theme
+  install -dm755 "${pkgdir}/usr/share/apps/kdm/themes/${_pkgname}"
+  install -m644 "${srcdir}/KDM-Theme-archlinux/"* -t "${pkgdir}/usr/share/apps/kdm/themes/${_pkgname}"
+  rm -r "${pkgdir}/usr/share/apps/kdm/themes/${_pkgname}/Licence GPLv3"
+  # install ksplash
+  install -dm755 "${pkgdir}/usr/share/apps/ksplash/Themes/${_pkgname}/images"
+  install -m644 "${srcdir}/Modern-KDE-Splash/main.qml" "${pkgdir}/usr/share/apps/ksplash/Themes/${_pkgname}/main.qml"
+  install -m644 "${srcdir}/Modern-KDE-Splash/Preview.png" "${pkgdir}/usr/share/apps/ksplash/Themes/${_pkgname}/Preview.png"
+  install -m644 "${srcdir}/Modern-KDE-Splash/Theme.rc" "${pkgdir}/usr/share/apps/ksplash/Themes/${_pkgname}/Theme.rc"
+  install -m644 "${srcdir}/Modern-KDE-Splash/images/"* -t "${pkgdir}/usr/share/apps/ksplash/Themes/${_pkgname}/images"
+}
