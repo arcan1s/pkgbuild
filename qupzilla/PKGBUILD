@@ -1,28 +1,26 @@
 # $Id: PKGBUILD 104846 2014-01-27 14:17:21Z speps $
 # Maintainer: speps <speps at aur dot archlinux dot org>
 
-pkgbase=qupzilla
-pkgname=(qupzilla qupzilla-qt5)
-pkgver=1.6.1
+pkgname=qupzilla
+pkgver=1.6.3
 pkgrel=1
 pkgdesc="Cross-platform QtWebKit browser"
 arch=(i686 x86_64)
 url="http://www.qupzilla.com/"
 license=('GPL3')
-makedepends=('qtwebkit' 'qt5-webkit' 'qt5-script' 'hunspell')
+makedepends=('qtwebkit' 'hunspell')
 optdepends=('bash-completion: bash completion support')
 install="$pkgbase.install"
 source=("$pkgbase-$pkgver.tar.gz::https://github.com/QupZilla/qupzilla/archive/v$pkgver.tar.gz"
         "${srcdir}/fix-color.patch")
 noextract=("$pkgbase-$pkgver.tar.gz")
-md5sums=('ca6fee487c9871d37d2dd09b3617b88f'
+md5sums=('SKIP'
          'b4f5f825c3763bc42c2df1af2703ac07')
 
 prepare() {
   # extract
-  mkdir -p qt{4,5}
+  mkdir -p qt4
   bsdtar --strip-components 1 -zxf $pkgbase-$pkgver.tar.gz -C qt4
-  bsdtar --strip-components 1 -zxf $pkgbase-$pkgver.tar.gz -C qt5
 
   patch -p0 -i "${srcdir}/fix-color.patch"
   # configure
@@ -34,30 +32,12 @@ build() {
   cd qt4
   qmake-qt4
   make
-
-  cd ../qt5
-  qmake
-  make
 }
 
 package_qupzilla() {
   depends=('qtwebkit' 'hunspell')
 
   cd qt4
-  make INSTALL_ROOT="$pkgdir/" install
-
-  # zsh completion
-  install -Dm644 linux/completion/_$pkgbase \
-    "$pkgdir/usr/share/zsh/site-functions/_$pkgbase"
-}
-
-package_qupzilla-qt5() {
-  pkgdesc+=" (Qt5)"
-  depends=('qt5-webkit' 'qt5-script' 'hunspell' 'desktop-file-utils' 'hicolor-icon-theme')
-  provides=('qupzilla')
-  conflicts=('qupzilla')
-
-  cd qt5
   make INSTALL_ROOT="$pkgdir/" install
 
   # zsh completion
