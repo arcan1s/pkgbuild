@@ -9,7 +9,7 @@ arch=('i686' 'x86_64')
 url="http://istodo.ru/"
 license=('custom')
 options=('!strip')
-depends=('hicolor-icon-theme' 'libsm' 'mesa' 'qt5-base')
+depends=('hicolor-icon-theme' 'libsm' 'mesa')
 makedepends=('desktop-file-utils')
 install=${pkgname}.install
 
