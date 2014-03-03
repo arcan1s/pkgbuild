@@ -3,7 +3,7 @@
 pkgname=istodo
 _pkgname=iStodo
 pkgver=1.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Crossplatform Qt5 based organizer for students"
 arch=('i686' 'x86_64')
 url="http://istodo.ru/"
