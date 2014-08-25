@@ -1,6 +1,8 @@
 post_install() {
-  xdg-icon-resource forceupdate --theme hicolor 2> /dev/null
-  update-desktop-database -q
+  cat << EOF
+Update plasmoids...
+EOF
+  kbuildsycoca4 > /dev/null 2>&1
 }
 
 post_upgrade() {
