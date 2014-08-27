@@ -1,0 +1,25 @@
+# Maintainer: Evgeniy Alekseev <arcanis.arch at gmail dot com>
+# use --force to override default theme system tray icons
+# do not forget replace theme name
+
+_themename=Diamond
+pkgname=krayscale-tray-icon-theme
+_pkgname=krayscale
+pkgver=0.9.1
+pkgrel=1
+pkgdesc="Grayscale tray icon theme"
+url="http://kde-look.org/content/show.php/Krayscale+%28Plasma+tray+icons%29?content=133300"
+arch=('any')
+license=('GPL')
+source=("http://kde-look.org/CONTENT/content-files/133300-${_pkgname}_${pkgver}.tar.gz")
+depends=('librsvg')
+md5sums=('d80b398f5ff6e81b23d3bd7ffc341c22')
+
+package() {
+  install -dm755 "${pkgdir}/usr/share/apps/desktoptheme/${_themename}/icons"
+  install -m644 "${srcdir}/${_pkgname}_${pkgver}/plasmatheme/icons/"*.svgz \
+          -t "${pkgdir}/usr/share/apps/desktoptheme/${_themename}/icons"
+  # workaround for mail client
+  install -m644 "${srcdir}/${_pkgname}_${pkgver}/plasmatheme/icons/kmail.svgz" \
+                "${pkgdir}/usr/share/apps/desktoptheme/${_themename}/icons/mail-unread.svgz"
+}
