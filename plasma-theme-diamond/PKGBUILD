@@ -3,7 +3,7 @@
 
 pkgname=plasma-theme-diamond
 _pkgname="Diamond"
-pkgver=2.0.2
+pkgver=2.0.3
 pkgrel=1
 pkgdesc="Transparent theme for KDE 4.x"
 arch=('any')
