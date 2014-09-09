@@ -1,6 +1,5 @@
-# Maintainer: Evgeniy Alekseev <arcanis dot arch at gmail dot com>
+# Maintainer: Evgeniy Alekseev <arcanis at archlinux dot org>
 # Contributor: msimav  <mustafa1991 at gmail dot com>
-# Please flag this package out-of-date if you get md5sum error
 
 pkgname=nitrux-icon-theme
 pkgver=3.3.0
@@ -11,7 +10,6 @@ arch=('any')
 license=('custom:Creative Commons')
 source=("http://nitrux.in/downloads/files/free/${pkgname}-${pkgver}.tar.gz")
 depends=('librsvg')
-makedepends=()
 options=(!strip)
 md5sums=('46fd91408b41a9f448accf22d809fe41')
 
