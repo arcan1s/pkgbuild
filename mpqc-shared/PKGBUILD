@@ -1,4 +1,4 @@
-# Maintainer: Evgeniy "arcanis" Alexeev <esalexeev@gmail.com>
+# Maintainer: Evgeniy Alekseev <arcanis at archlinux dot org>
 
 pkgname=mpqc-shared
 _pkgname=mpqc
@@ -27,4 +27,4 @@ package()
   cd "${srcdir}/${_pkgname}-${pkgver}"
   make installroot="${pkgdir}" install
   make installroot="${pkgdir}" install_devel
-} 
+}

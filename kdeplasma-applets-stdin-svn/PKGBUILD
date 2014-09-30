@@ -1,5 +1,5 @@
+# Maintainer: Evgeniy Alekseev <arcanis at archlinux dot org>
 # Contributor: weirdfox <weirdfox@gmail.com>
-# Maintainer: Evgeniy "arcanis" Alekseev <esalexeev@gmail.com>
 
 pkgname=kdeplasma-applets-stdin-svn
 pkgver=57

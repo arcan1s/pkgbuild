@@ -1,4 +1,4 @@
-# Maintainer: Evgeniy "arcanis" Alekseev <esalexeev@gmail.com>
+# Maintainer: Evgeniy Alekseev <arcanis at archlinux dot org>
 
 pkgname=mercury-ccdc
 _pkgname=mercury
@@ -25,7 +25,7 @@ package()
   "${srcdir}/mercurystandalone-3.1-linux-installer.run" --prefix "${pkgdir}/opt/mercury" --mode unattended
   chmod +x "${srcdir}/csdsystempatch-5.34.2-linux-installer.run"
   "${srcdir}/csdsystempatch-5.34.2-linux-installer.run" --prefix "${pkgdir}/opt/mercury" --mode unattended
-  
+
   install -D -m644 "${pkgdir}/opt/mercury/docs/MercuryLicence.txt" \
                    "${pkgdir}/usr/share/licenses/${_pkgname}/LICENSE"
   install -D -m755 "${srcdir}/mercury.sh" "${pkgdir}/etc/profile.d/mercury.sh"

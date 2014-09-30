@@ -1,4 +1,4 @@
-# Maintainer: Evgeniy "arcanis" Alexeev <arcanis.arch at gmail dot com>
+# Maintainer: Evgeniy Alekseev <arcanis at archlinux dot org>
 
 pkgname=kdeplasma-applets-usu-notifications
 _pkgname=usu-notifications
@@ -16,7 +16,7 @@ md5sums=('70b3cb22f8f93613ce9952c31fd40592')
 
 package() {
   cd "${srcdir}"
-  
+
   mkdir -p "${pkgdir}/usr/share/apps/plasma/plasmoids/${_pkgname}"
   cp -r "${srcdir}/"{contents,platformcontents,metadata.desktop} \
         "${pkgdir}/usr/share/apps/plasma/plasmoids/${_pkgname}/"

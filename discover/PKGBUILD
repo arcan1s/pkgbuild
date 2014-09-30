@@ -1,4 +1,4 @@
-# Maintainer: Evgeniy "arcanis" Alekseev <esalexeev@gmail.com>
+# Maintainer: Evgeniy Alekseev <arcanis at archlinux dot org>
 
 pkgname=discover
 pkgver=2.1.2
@@ -34,7 +34,7 @@ package()
   # remove docs and sbin dir
   rm -rf "${pkgdir}/usr/share/doc"
   rm -rf "${pkgdir}/usr/sbin"
-  
+
   # build data
   cd "${srcdir}/${pkgname}-data-${_dataver}"
   make prefix="/usr" DESTDIR="${pkgdir}" install

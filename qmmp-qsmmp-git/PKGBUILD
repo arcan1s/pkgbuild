@@ -1,5 +1,5 @@
+# Maintainer: Evgeniy Alekseev <arcanis at archlinux dot org>
 # Contributor: core <angrycore@gmail.com>
-# Maintainer Evgeniy "arcanis" Alekseev <esalexeev@gmail.com>
 
 pkgname=qmmp-qsmmp-git
 _gitname=qsmmp

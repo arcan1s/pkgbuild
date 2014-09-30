@@ -1,5 +1,4 @@
-# Author: Evgeniy "arcanis" Alexeev <arcanis.arch at gmail dot com>
-# Maintainer: Evgeniy "arcanis" Alexeev <arcanis.arch at gmail dot com>
+# Maintainer: Evgeniy Alekseev <arcanis at archlinux dot org>
 
 pkgname=mathmech
 pkgver=1.2.0
@@ -36,4 +35,4 @@ package() {
   make DESTDIR="${pkgdir}" install
   install -Dm644 "${srcdir}/COPYING" "${pkgdir}/usr/share/licenses/${pkgname}/COPYING"
 }
- 
+

@@ -1,5 +1,4 @@
-# Author: Evgeniy "arcanis" Alexeev <esalexeev@gmail.com>
-# Maintainer: Evgeniy "arcanis" Alexeev <esalexeev@gmail.com>
+# Maintainer: Evgeniy Alekseev <arcanis at archlinux dot org>
 
 pkgname=food_gui
 pkgver=1.2.1
@@ -21,9 +20,9 @@ package()
   install -D -m644 "${srcdir}/usr/share/icons/hicolor/32x32/apps/food_gui.png" \
                    "${pkgdir}/usr/share/icons/hicolor/32x32/apps/food_gui.png"
   install -D -m644 "${srcdir}/usr/share/pixmaps/food_gui.png" "${pkgdir}/usr/share/pixmaps/food_gui.png"
-  
+
   install -D -m644 "${srcdir}/usr/share/food_gui/db_eng.dat" "${pkgdir}/usr/share/food_gui/db_eng.dat"
   install -D -m644 "${srcdir}/usr/share/food_gui/db_rus.dat" "${pkgdir}/usr/share/food_gui/db_rus.dat"
-  
+
   install -D -m644 "${srcdir}/usr/share/man/man1/food_gui.1" "${pkgdir}/usr/share/man/man1/food_gui.1"
 }

@@ -1,5 +1,5 @@
+# Maintainer: Evgeniy  Alekseev <arcanis at archlinux dot org>
 # Author: Simone Tobia <simone.tobia at gmail dot com>
-# Maintainer: Evgeniy "arcanis" Alekseev <esalexeev@gmail.com>
 
 pkgname=appset-qt
 pkgver='0.7.2'

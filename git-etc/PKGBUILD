@@ -1,5 +1,4 @@
-# Author: Evgeniy "arcanis" Alexeev <esalexeev@gmail.com>
-# Maintainer: Evgeniy "arcanis" Alexeev <esalexeev@gmail.com>
+# Maintainer: Evgeniy Alekseev <arcanis at archlinux dot org>
 
 pkgname=git-etc
 pkgver=2.3.1

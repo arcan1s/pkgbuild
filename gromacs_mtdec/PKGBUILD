@@ -1,4 +1,4 @@
-# Maintainer: Evgeniy "arcanis" Alexeev <esalexeev@gmail.com>
+# Maintainer: Evgeniy Alekseev <arcanis at archlinux dot org>
 
 pkgname=gromacs_mtdec
 pkgver=3.3.2
@@ -25,7 +25,7 @@ package()
   mkdir -p "${pkgdir}/usr/share/bash-completion/completions"
   cd "${srcdir}/mtdec"
   make DESTDIR="${pkgdir}" install
-  
+
   # installing completions in correct location and environment setup script
   install -D -m755 "${srcdir}/mtdec/scripts/completion.bash" "${pkgdir}/usr/share/bash-completion/completions/gromacs_mtdec"
   mv "${pkgdir}/usr/bin/GMXRC.bash" "${pkgdir}/etc/profile.d/GMXRC_MTDEC.bash"
