@@ -19,5 +19,5 @@ package() {
   find "${pkgdir}/usr/share/icons" -type d -exec chmod 755 '{}' \;
   find "${pkgdir}/usr/share/icons" -type f -exec chmod 644 '{}' \;
 
-  install -Dm644 "${pkgdir}/usr/share/icons/NITRUX-KDE/COPYING" "${pkgdir}/usr/share/licenses/${pkgname}/COPYING"
+  install -Dm644 "${pkgdir}/usr/share/icons/Nitrux/COPYING" "${pkgdir}/usr/share/licenses/${pkgname}/COPYING"
 }
