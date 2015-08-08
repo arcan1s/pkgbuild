@@ -1,14 +1,15 @@
 pkgbuild
 ========
 
-My Arch AUR PKGBUILD's. At the moment it is only for private use since any package
-points to git repository by using SSH protocol (thus it requires my private key).
+My Arch AUR PKGBUILD's. At the moment this repository is only for private use
+since any package points to git repository over SSH protocol (thus it requires
+my private key).
 
-Clone or update submodule statuses
+Clone or submodule statuses update
 ----------------------------------
 
 ```
-# clone if no repository cloned
+# clone if no repository clones
 git clone https://github.com/arcan1s/pkgbuild.git
 cd pkgbuild
 git submodule update --init
@@ -33,11 +34,12 @@ Update package
 cd pkgbuild/$pkgbase
 vim PKGBUILD
 # some changes here
-mkscrinfo
-git add PKGBUILD .SRCINFO       # newly created files should be added too
+mksrcinfo
+git add PKGBUILD .SRCINFO       # newly created (edited) files should be added too
+                                # please do not use -A since it will add binaries too
 git commit -m 'bump $pkgbase to $pkgver-$pkgrel'
 git push
-# now update repository
+# now update repository if there are no errors
 cd ..
 git add $pkgbase
 git commit -m 'bump $pkgbase to $pkgver-$pkgrel'
@@ -50,7 +52,7 @@ Force update submodules to AUR state
 ```
 cd pkgbuild
 git submodule foreach git pull origin master
-git add -A .                    # or smth like this
+git add -A .                    # or something like this
 git commit -m 'bump packages to aur versions'
 git push
 ```
