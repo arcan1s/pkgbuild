@@ -1,108 +1,120 @@
 [submodule "appset-qt"]
     path = appset-qt
-    url = ssh+git://aur@aur4.archlinux.org/appset-qt.git
+    url = ssh+git://aur@aur.archlinux.org/appset-qt.git
 [submodule "discover"]
     path = discover
-    url = ssh+git://aur@aur4.archlinux.org/discover.git
+    url = ssh+git://aur@aur.archlinux.org/discover.git
 [submodule "eric4"]
     path = eric4
-    url = ssh+git://aur@aur4.archlinux.org/eric4.git
+    url = ssh+git://aur@aur.archlinux.org/eric4.git
 [submodule "food_gui"]
     path = food_gui
-    url = ssh+git://aur@aur4.archlinux.org/food_gui.git
+    url = ssh+git://aur@aur.archlinux.org/food_gui.git
 [submodule "ghemical-mpqc"]
     path = ghemical-mpqc
-    url = ssh+git://aur@aur4.archlinux.org/ghemical-mpqc.git
+    url = ssh+git://aur@aur.archlinux.org/ghemical-mpqc.git
 [submodule "git-etc"]
     path = git-etc
-    url = ssh+git://aur@aur4.archlinux.org/git-etc.git
+    url = ssh+git://aur@aur.archlinux.org/git-etc.git
 [submodule "gtk-kde4"]
     path = gtk-kde4
-    url = ssh+git://aur@aur4.archlinux.org/gtk-kde4.git
+    url = ssh+git://aur@aur.archlinux.org/gtk-kde4.git
 [submodule "istodo"]
     path = istodo
-    url = ssh+git://aur@aur4.archlinux.org/istodo.git
+    url = ssh+git://aur@aur.archlinux.org/istodo.git
 [submodule "kate-latex-plugin"]
     path = kate-latex-plugin
-    url = ssh+git://aur@aur4.archlinux.org/kate-latex-plugin.git
+    url = ssh+git://aur@aur.archlinux.org/kate-latex-plugin.git
 [submodule "katecpp-helper-plugin"]
     path = katecpp-helper-plugin
-    url = ssh+git://aur@aur4.archlinux.org/katecpp-helper-plugin.git
+    url = ssh+git://aur@aur.archlinux.org/katecpp-helper-plugin.git
 [submodule "kdeicons-nouvekdegray"]
     path = kdeicons-nouvekdegray
-    url = ssh+git://aur@aur4.archlinux.org/kdeicons-nouvekdegray.git
+    url = ssh+git://aur@aur.archlinux.org/kdeicons-nouvekdegray.git
 [submodule "kdeplasma-applets-awesome-widgets-git"]
     path = kdeplasma-applets-awesome-widgets-git
-    url = ssh+git://aur@aur4.archlinux.org/kdeplasma-applets-awesome-widgets-git.git
+    url = ssh+git://aur@aur.archlinux.org/kdeplasma-applets-awesome-widgets-git.git
 [submodule "kdeplasma-applets-oblikuestrategies"]
     path = kdeplasma-applets-oblikuestrategies
-    url = ssh+git://aur@aur4.archlinux.org/kdeplasma-applets-oblikuestrategies.git
+    url = ssh+git://aur@aur.archlinux.org/kdeplasma-applets-oblikuestrategies.git
 [submodule "kdeplasma-applets-plasmacon"]
     path = kdeplasma-applets-plasmacon
-    url = ssh+git://aur@aur4.archlinux.org/kdeplasma-applets-plasmacon.git
+    url = ssh+git://aur@aur.archlinux.org/kdeplasma-applets-plasmacon.git
 [submodule "kdeplasma-applets-stdin-svn"]
     path = kdeplasma-applets-stdin-svn
-    url = ssh+git://aur@aur4.archlinux.org/kdeplasma-applets-stdin-svn.git
+    url = ssh+git://aur@aur.archlinux.org/kdeplasma-applets-stdin-svn.git
 [submodule "kdeplasma-applets-usu-notifications"]
     path = kdeplasma-applets-usu-notifications
-    url = ssh+git://aur@aur4.archlinux.org/kdeplasma-applets-usu-notifications.git
+    url = ssh+git://aur@aur.archlinux.org/kdeplasma-applets-usu-notifications.git
 [submodule "kdeplasma-wallpapers-dayandnight"]
     path = kdeplasma-wallpapers-dayandnight
-    url = ssh+git://aur@aur4.archlinux.org/kdeplasma-wallpapers-dayandnight.git
+    url = ssh+git://aur@aur.archlinux.org/kdeplasma-wallpapers-dayandnight.git
 [submodule "kdm-theme-modernarchlinux"]
     path = kdm-theme-modernarchlinux
-    url = ssh+git://aur@aur4.archlinux.org/kdm-theme-modernarchlinux.git
+    url = ssh+git://aur@aur.archlinux.org/kdm-theme-modernarchlinux.git
 [submodule "kwin-scripts-tiling"]
     path = kwin-scripts-tiling
-    url = ssh+git://aur@aur4.archlinux.org/kwin-scripts-tiling.git
+    url = ssh+git://aur@aur.archlinux.org/kwin-scripts-tiling.git
 [submodule "lib32-libarchive"]
     path = lib32-libarchive
-    url = ssh+git://aur@aur4.archlinux.org/lib32-libarchive.git
+    url = ssh+git://aur@aur.archlinux.org/lib32-libarchive.git
 [submodule "libghemical-mpqc"]
     path = libghemical-mpqc
-    url = ssh+git://aur@aur4.archlinux.org/libghemical-mpqc.git
+    url = ssh+git://aur@aur.archlinux.org/libghemical-mpqc.git
 [submodule "mpqc-shared"]
     path = mpqc-shared
-    url = ssh+git://aur@aur4.archlinux.org/mpqc-shared.git
+    url = ssh+git://aur@aur.archlinux.org/mpqc-shared.git
 [submodule "netctl-gui"]
     path = netctl-gui
-    url = ssh+git://aur@aur4.archlinux.org/netctl-gui.git
+    url = ssh+git://aur@aur.archlinux.org/netctl-gui.git
 [submodule "netctl-gui-qt4"]
     path = netctl-gui-qt4
-    url = ssh+git://aur@aur4.archlinux.org/netctl-gui-qt4.git
+    url = ssh+git://aur@aur.archlinux.org/netctl-gui-qt4.git
 [submodule "nitrux-icon-theme"]
     path = nitrux-icon-theme
-    url = ssh+git://aur@aur4.archlinux.org/nitrux-icon-theme.git
+    url = ssh+git://aur@aur.archlinux.org/nitrux-icon-theme.git
 [submodule "nitrux-icon-theme-kde"]
     path = nitrux-icon-theme-kde
-    url = ssh+git://aur@aur4.archlinux.org/nitrux-icon-theme-kde.git
+    url = ssh+git://aur@aur.archlinux.org/nitrux-icon-theme-kde.git
 [submodule "plasma-theme-diamond"]
     path = plasma-theme-diamond
-    url = ssh+git://aur@aur4.archlinux.org/plasma-theme-diamond.git
+    url = ssh+git://aur@aur.archlinux.org/plasma-theme-diamond.git
 [submodule "plasma5-applet-awesome-widgets"]
     path = plasma5-applet-awesome-widgets
-    url = ssh+git://aur@aur4.archlinux.org/plasma5-applet-awesome-widgets.git
+    url = ssh+git://aur@aur.archlinux.org/plasma5-applet-awesome-widgets.git
 [submodule "python2-cyrano"]
     path = python2-cyrano
-    url = ssh+git://aur@aur4.archlinux.org/python2-cyrano.git
+    url = ssh+git://aur@aur.archlinux.org/python2-cyrano.git
 [submodule "qmmp-qsmmp-git"]
     path = qmmp-qsmmp-git
-    url = ssh+git://aur@aur4.archlinux.org/qmmp-qsmmp-git.git
+    url = ssh+git://aur@aur.archlinux.org/qmmp-qsmmp-git.git
 [submodule "qscite"]
     path = qscite
-    url = ssh+git://aur@aur4.archlinux.org/qscite.git
+    url = ssh+git://aur@aur.archlinux.org/qscite.git
 [submodule "scidavis"]
     path = scidavis
-    url = ssh+git://aur@aur4.archlinux.org/scidavis.git
+    url = ssh+git://aur@aur.archlinux.org/scidavis.git
 [submodule "square-beam-icon-theme"]
     path = square-beam-icon-theme
-    url = ssh+git://aur@aur4.archlinux.org/square-beam-icon-theme.git
+    url = ssh+git://aur@aur.archlinux.org/square-beam-icon-theme.git
 [submodule "tepsonic-git"]
     path = tepsonic-git
-    url = ssh+git://aur@aur4.archlinux.org/tepsonic-git.git
+    url = ssh+git://aur@aur.archlinux.org/tepsonic-git.git
 [submodule "voxforge-am-julius-nightly"]
     path = voxforge-am-julius-nightly
-    url = ssh+git://aur@aur4.archlinux.org/voxforge-am-julius-nightly.git
+    url = ssh+git://aur@aur.archlinux.org/voxforge-am-julius-nightly.git
 [submodule "yarock-qt5"]
     path = yarock-qt5
-    url = ssh+git://aur@aur4.archlinux.org/yarock-qt5.git
+    url = ssh+git://aur@aur.archlinux.org/yarock-qt5.git
+[submodule "1pass-hg"]
+	path = 1pass-hg
+	url = ssh+git://aur@aur.archlinux.org/1pass-hg.git/
+[submodule "compass-icon-theme"]
+	path = compass-icon-theme
+	url = ssh+git://aur@aur.archlinux.org/compass-icon-theme.git/
+[submodule "compass-icon-theme-kde"]
+	path = compass-icon-theme-kde
+	url = ssh+git://aur@aur.archlinux.org/compass-icon-theme-kde.git/
+[submodule "fingerprint-gui"]
+	path = fingerprint-gui
+	url = ssh+git://aur@aur.archlinux.org/fingerprint-gui.git/
