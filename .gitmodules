@@ -118,3 +118,6 @@
 [submodule "fingerprint-gui"]
 	path = fingerprint-gui
 	url = ssh+git://aur@aur.archlinux.org/fingerprint-gui.git/
+[submodule "quimup"]
+	path = quimup
+	url = ssh+git://aur@aur.archlinux.org/quimup.git
