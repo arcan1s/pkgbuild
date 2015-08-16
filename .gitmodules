@@ -121,3 +121,12 @@
 [submodule "quimup"]
 	path = quimup
 	url = ssh+git://aur@aur.archlinux.org/quimup.git
+[submodule "kdebase-dolphin-klook"]
+	path = kdebase-dolphin-klook
+	url = ssh+git://aur@aur.archlinux.org/kdebase-dolphin-klook.git
+[submodule "klook-git"]
+	path = klook-git
+	url = ssh+git://aur@aur.archlinux.org/klook-git.git
+[submodule "sim"]
+	path = sim
+	url = ssh+git://aur@aur.archlinux.org/sim.git
