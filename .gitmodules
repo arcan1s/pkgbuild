@@ -130,3 +130,16 @@
 [submodule "sim"]
 	path = sim
 	url = ssh+git://aur@aur.archlinux.org/sim.git
+[submodule "liblastfm-qt5"]
+	path = liblastfm-qt5
+	url = ssh+git://aur@aur.archlinux.org/liblastfm-qt5.git
+[submodule "libechonest-qt5"]
+	path = libechonest-qt5
+	url = ssh+git://aur@aur.archlinux.org/libechonest-qt5.git
+[submodule "tomahawk-qt5"]
+	path = tomahawk-qt5
+	url = ssh+git://aur@aur.archlinux.org/tomahawk-qt5.git
+[submodule "baloo4-widgets"]
+	path = baloo4-widgets
+	url = ssh+git://aur@aur.archlinux.org/baloo4-widgets.git
+	branch = master
