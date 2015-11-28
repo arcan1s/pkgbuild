@@ -143,3 +143,6 @@
 	path = baloo4-widgets
 	url = ssh+git://aur@aur.archlinux.org/baloo4-widgets.git
 	branch = master
+[submodule "tomahawk"]
+	path = tomahawk
+	url = ssh+git://aur@aur.archlinux.org/tomahawk.git
