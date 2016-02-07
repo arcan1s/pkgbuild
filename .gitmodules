@@ -146,3 +146,6 @@
 [submodule "tomahawk"]
 	path = tomahawk
 	url = ssh+git://aur@aur.archlinux.org/tomahawk.git
+[submodule "repo-scripts"]
+	path = repo-scripts
+	url = ssh+git://aur@aur.archlinux.org/repo-scripts.git/
