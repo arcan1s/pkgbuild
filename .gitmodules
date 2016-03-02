@@ -149,3 +149,9 @@
 [submodule "repo-scripts"]
 	path = repo-scripts
 	url = ssh+git://aur@aur.archlinux.org/repo-scripts.git/
+[submodule "zsh-autosuggestions"]
+	path = zsh-autosuggestions
+	url = ssh+git://aur@aur.archlinux.org/zsh-autosuggestions.git/
+[submodule "python-gspread"]
+	path = python-gspread
+	url = ssh+git://aur@aur.archlinux.org/python-gspread.git/
