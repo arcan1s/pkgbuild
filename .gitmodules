@@ -155,3 +155,6 @@
 [submodule "python-gspread"]
 	path = python-gspread
 	url = ssh+git://aur@aur.archlinux.org/python-gspread.git/
+[submodule "qtkeychain-qt4"]
+	path = qtkeychain-qt4
+	url = ssh+git://aur@aur.archlinux.org/qtkeychain-qt4.git/
