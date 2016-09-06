@@ -158,3 +158,6 @@
 [submodule "qtkeychain-qt4"]
 	path = qtkeychain-qt4
 	url = ssh+git://aur@aur.archlinux.org/qtkeychain-qt4.git/
+[submodule "quazip-qt4"]
+	path = quazip-qt4
+	url = ssh+git://aur@aur.archlinux.org/quazip-qt4.git/
