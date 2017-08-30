@@ -1,9 +1,7 @@
 pkgbuild
 ========
 
-My Arch AUR PKGBUILD's. At the moment this repository is only for private use
-since any package points to git repository over SSH protocol (thus it requires
-my private key).
+My Arch AUR PKGBUILD's
 
 Clone or submodule statuses update
 ----------------------------------
