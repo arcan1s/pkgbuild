@@ -161,3 +161,12 @@
 [submodule "plibsys"]
 	path = plibsys
 	url = ssh+git://aur@aur.archlinux.org/plibsys.git
+[submodule "albert"]
+	path = albert
+	url = ssh+git://aur@aur.archlinux.org/albert.git
+[submodule "grace"]
+	path = grace
+	url = ssh+git://aur@aur.archlinux.org/grace.git
+[submodule "libechonest-qt5"]
+	path = libechonest-qt5
+	url = ssh+git://aur@aur.archlinux.org/libechonest-qt5.git
