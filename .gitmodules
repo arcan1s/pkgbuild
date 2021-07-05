@@ -170,3 +170,6 @@
 [submodule "libechonest-qt5"]
 	path = libechonest-qt5
 	url = ssh+git://aur@aur.archlinux.org/libechonest-qt5.git
+[submodule "ahriman"]
+	path = ahriman
+	url = ssh+git://aur@aur.archlinux.org/ahriman.git
