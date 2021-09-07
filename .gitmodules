@@ -173,3 +173,6 @@
 [submodule "ahriman"]
 	path = ahriman
 	url = ssh+git://aur@aur.archlinux.org/ahriman.git
+[submodule "python-pydeps"]
+	path = python-pydeps
+	url = ssh+git://aur@aur.archlinux.org/python-pydeps.git
