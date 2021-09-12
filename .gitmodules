@@ -176,3 +176,6 @@
 [submodule "python-pydeps"]
 	path = python-pydeps
 	url = ssh+git://aur@aur.archlinux.org/python-pydeps.git
+[submodule "python-aioauth-client"]
+	path = python-aioauth-client
+	url = ssh+git://aur@aur.archlinux.org/python-aioauth-client.git
